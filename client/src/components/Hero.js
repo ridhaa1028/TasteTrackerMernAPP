@@ -1,4 +1,3 @@
-
 import heroImage from './hero.jpg';
 import React from 'react';
 import { Link } from 'react-scroll';
@@ -27,14 +26,14 @@ function Hero({ isLoggedIn, openLoginModal }) {
               spy={true}
               smooth={true}
               duration={500}
-              className="hover:underline bg-black text-white font-bold rounded-full py-4 px-8 border-2 border-black"
+              className="hover:scale-110 transform transition-transform duration-300 hover:underline bg-black text-white font-bold rounded-full py-4 px-8 border-2 border-black"
             >
               Write a Review
             </Link>
           ) : (
             <button
               onClick={handleLoginClick}
-              className="hover:underline bg-black text-white font-bold rounded-full py-4 px-8 border-2 border-black"
+              className="hover:scale-110 transform transition-transform duration-300 hover:underline bg-black text-white font-bold rounded-full py-4 px-8 border-2 border-black"
             >
               Login to Write a Review
             </button>
@@ -44,7 +43,7 @@ function Hero({ isLoggedIn, openLoginModal }) {
             spy={true}
             smooth={true}
             duration={500}
-            className=" ml-4 hover:underline bg-black text-white font-bold rounded-full py-4 px-8 border-2 border-black"
+            className=" ml-4 hover:scale-110 transform transition-transform duration-300 hover:underline bg-black text-white font-bold rounded-full py-4 px-8 border-2 border-black"
           >
             View Reviews
           </Link>
@@ -55,3 +54,4 @@ function Hero({ isLoggedIn, openLoginModal }) {
 }
 
 export default Hero;
+

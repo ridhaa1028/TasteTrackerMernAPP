@@ -32,11 +32,11 @@ function Header({ isLoggedIn, onLogin, onLogout }) {
       <div className="flex items-center">
         {isLoggedIn && (
           <>
-            <button onClick={onLogout} className="text-white hover:text-gray-200 px-3 py-2 rounded-md text-xl font-medium">Logout</button>
-            <button onClick={openContactModal} className="text-white hover:text-gray-200 px-3 py-2 rounded-md text-xl font-medium">Contact</button>
+            <button onClick={onLogout} className="text-white hover:scale-110 transform transition-transform duration-300 px-3 py-2 rounded-md text-xl font-medium">Logout</button>
+            <button onClick={openContactModal} className="text-white hover:scale-110 transform transition-transform duration-300 px-3 py-2 rounded-md text-xl font-medium">Contact</button>
           </>
         )}
-      <button onClick={openAboutModal} className="text-white hover:text-gray-200 px-3 py-2 rounded-md text-xl font-medium">About</button>
+      <button onClick={openAboutModal} className="text-white hover:scale-110 transform transition-transform duration-300 px-3 py-2 rounded-md text-xl font-medium">About</button>
       </div>
       <Modal
         isOpen={showAboutModal}

@@ -34,12 +34,10 @@ const handleSubmit = async (e) => {
       subject,
       message,
     });
-
+    window.location.reload();
     console.log('Contact form submitted successfully:', response.data);
-    // Optionally, you can redirect the user to another page or display a success message
   } catch (error) {
     console.error('Error submitting contact form:', error.message);
-    // Optionally, you can display an error message to the user
   }
 };
 
@@ -76,7 +74,7 @@ const handleSubmit = async (e) => {
             <textarea id="message" name="message" value={formData.message} onChange={handleChange} className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required></textarea>
           </div>
           <div className="flex justify-between">
-            <button type="submit" className="bg-black text-white py-2 px-4 rounded hover:bg-blue-600">Submit</button>
+            <button type="submit" className="bg-black hover:scale-110 transform transition-transform duration-300 text-white py-2 px-4 rounded hover:bg-blue-600">Submit</button>
           </div>
         </form>
       </div>

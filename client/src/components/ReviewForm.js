@@ -111,13 +111,13 @@ const handleSubmit = async (e) => {
               />
             </div>
             <div className="flex justify-center">
-              <button type="submit" className="bg-white text-black font-bold rounded-full py-2 px-6 mr-4">Submit</button>
+              <button type="submit" className="bg-white hover:scale-110 transform transition-transform duration-300 text-black font-bold rounded-full py-2 px-6 mr-4">Submit</button>
               <Link
                 to="hero"
                 spy={true}
                 smooth={true}
                 duration={500}
-                className="hover:underline bg-white text-white font-bold rounded-full py-4 px-8 border-2 border-black"
+                className="hover:scale-110 transform transition-transform duration-300 bg-white text-white font-bold rounded-full py-4 px-8 border-2 border-black"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 inline-block -mt-1" fill="black" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
