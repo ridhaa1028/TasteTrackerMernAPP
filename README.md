@@ -40,7 +40,7 @@ TasteTracker is built using the following technologies:
 
 To run TasteTracker locally on your machine, follow these steps:
 
-1. **Clone the Repository**: `git clone https://github.com/yourusername/TasteTracker.git`
+1. **Clone the Repository**: `git clone https://github.com/ridhaa1028/TasteTrackerMernAPP.git`
 2. **Install Dependencies**: `cd TasteTracker && npm install`
 3. **Start the Development Server**: `npm start for both client, and express-app`
 4. **Access the Application**: Open your web browser and navigate to `http://localhost:3000`.
