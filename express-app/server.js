@@ -20,12 +20,11 @@ mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
   });
 
 
-
-
 var contactRouter = require('./routes/Contacts');
 var reviewRouter = require('./routes/Reviews');
 var userRouter = require('./routes/User')
 var app = express();
+
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -33,10 +32,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+//set up CORS
 const corsOptions = {
-  origin: 'http://localhost:3000', // Replace with your frontend URL
-  methods: ['GET', 'POST'], // Allow only certain methods
-  credentials: true, // Allow credentials (cookies, authorization headers, etc.)
+  origin: 'http://localhost:3000', 
+  methods: ['GET', 'POST', 'DELETE', 'PUT'],
+  credentials: true, 
 };
 
 app.use(cors(corsOptions));

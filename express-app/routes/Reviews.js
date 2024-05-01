@@ -9,7 +9,7 @@ const deleteReview = require('../controllers/deleteReview');
 router.post('/', async (req, res) => {
   const { restaurantName, reviewText, rating, reviewer } = req.body;
   try {
-    const newReview = await createReview(restaurantName, rating, reviewText, reviewer);
+    const newReview = await createReview(restaurantName, rating, reviewText, reviewer); //calls createReview controller
     res.status(201).json(newReview);
   } catch (err) {
     console.error('Error creating review', err);
@@ -20,7 +20,7 @@ router.post('/', async (req, res) => {
 // Route to get all reviews
 router.get('/', async (req, res) => {
   try {
-    const reviews = await getAllReviews();
+    const reviews = await getAllReviews(); //calls getAllReviews controller
     res.json(reviews);
   } catch (err) {
     console.error('Error getting reviews', err);
@@ -29,12 +29,13 @@ router.get('/', async (req, res) => {
 });
 
 // Route to update a review
-router.put('/:id', async (req, res) => {
-  const id = req.params.id;
-  const { restaurantName, date, reviewText, rating } = req.body;
+router.put('/', async (req, res) => {
+  const { id, currentUser } = req.body
+  const { restaurantName, reviewText, rating, reviewer} = req.body;
   try {
-    const updatedReview = await updateReview(id, restaurantName, date, reviewText, rating);
+    const updatedReview = await updateReview(id, restaurantName, rating, reviewText, reviewer, currentUser); //calls updateReview controller
     if (!updatedReview) {
+      console.log("reviewnotfound")
       res.status(404).send('Review not found');
     } else {
       res.json(updatedReview);
@@ -46,10 +47,17 @@ router.put('/:id', async (req, res) => {
 });
 
 // Route to delete a review
-router.delete('/:id', async (req, res) => {
-  const id = req.params.id;
+router.delete('/', async (req, res) => {
+  const { id, currentUser } = req.body; 
+  console.log(id);
+  console.log(currentUser);
   try {
-    const deletedReview = await deleteReview(id);
+    if (!id) {
+      console.log("ReviewIDMissing")
+      return res.status(400).send('Review ID is required');
+    }
+
+    const deletedReview = await deleteReview(id, currentUser); //calls deleteReview controller
     if (!deletedReview) {
       res.status(404).send('Review not found');
     } else {

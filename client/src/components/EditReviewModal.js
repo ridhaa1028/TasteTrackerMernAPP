@@ -36,13 +36,12 @@ function EditReviewModal({ isOpen, onClose, reviewData,}) {
         restaurantName: restaurantName,
         rating: rating,
         reviewText: reviewText,
-        reviewer: reviewData.reviewer // Assuming reviewer data is also needed
+        reviewer: reviewData.reviewer
         });
         window.location.reload()
         onClose(); // Close the modal after successful update
     } catch (error) {
         console.error('Error updating review:', error);
-        // Handle error
     }
     };
 

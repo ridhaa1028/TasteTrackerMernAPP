@@ -1,6 +1,6 @@
 const Review = require('../models/Review');
 
-async function deleteReview(reviewId, userId) {
+async function deleteReview(reviewId, username) {
   try {
     // First, find the review to ensure the user attempting the delete is the reviewer.
     const review = await Review.findById(reviewId);
@@ -9,7 +9,7 @@ async function deleteReview(reviewId, userId) {
     }
 
     // Check if the requesting user is the reviewer
-    if (review.reviewer.toString() !== userId) {
+    if (review.reviewer.toString() !== username) {
       throw new Error('User is not authorized to delete this review');
     }
 
